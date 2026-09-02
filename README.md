@@ -15,6 +15,7 @@ Notebook praktikum pemrosesan citra digital menggunakan **OpenCV**, **NumPy**,
 ```
 pemrosesan-citra/
 ├── pemrosesan_citra.ipynb   # notebook utama (semua tugas)
+├── pemrosesan_citra.html    # versi HTML siap kumpul (output ikut tersimpan)
 ├── images/                  # ← simpan foto pribadi di sini
 ├── output/                  # hasil olahan (dibuat otomatis)
 ├── requirements.txt
@@ -56,6 +57,23 @@ mengecek posisi kotaknya sebelum di-crop.
 ```python
 ROI = (0.00, 0.49, 0.74, 0.93)   # kiri, atas, kanan, bawah
 ```
+
+## Ekspor ke HTML
+
+Berkas [`pemrosesan_citra.html`](pemrosesan_citra.html) adalah versi notebook
+yang sudah dieksekusi lengkap dengan seluruh gambar dan output — tinggal dibuka
+di browser, tidak perlu Python atau Jupyter.
+
+Untuk membuat ulang setelah notebook diubah:
+
+```bash
+python -m jupyter nbconvert --to html --HTMLExporter.mathjax_url="" pemrosesan_citra.ipynb
+```
+
+Semua gambar ditanam sebagai data URI sehingga berkasnya mandiri dan tetap
+tampil normal walau dibuka tanpa koneksi internet. Opsi `mathjax_url=""`
+mencegah nbconvert memuat MathJax dari CDN, yang tidak diperlukan karena rumus
+di notebook ditulis sebagai teks biasa.
 
 ## Berkas Keluaran
 
