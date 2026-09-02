@@ -26,8 +26,11 @@ pemrosesan-citra/
 **1. Pasang dependensi**
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
+
+> Bentuk `python -m pip` dipakai supaya tetap jalan walaupun `pip.exe` tidak
+> terdaftar di PATH — kasus yang umum pada instalasi Python di Windows.
 
 **2. Simpan foto pribadi ke folder `images/`**
 
@@ -38,7 +41,7 @@ tersebut, jadi nama filenya bebas. Format yang didukung: `.jpg`, `.jpeg`,
 **3. Buka notebook**
 
 ```bash
-jupyter notebook pemrosesan_citra.ipynb
+python -m jupyter notebook pemrosesan_citra.ipynb
 ```
 
 Jalankan semua sel dari atas ke bawah (`Kernel → Restart & Run All`).
@@ -46,11 +49,12 @@ Jalankan semua sel dari atas ke bawah (`Kernel → Restart & Run All`).
 **4. Sesuaikan area crop (Tugas 4)**
 
 Di sel Tugas 4 ada variabel `ROI` berisi rasio `(x1, y1, x2, y2)` dengan nilai
-`0.0`–`1.0`. Ubah nilainya agar kotak crop pas menutupi objek utama di foto
-kamu, lalu jalankan sel pratinjau untuk mengecek posisinya sebelum di-crop.
+`0.0`–`1.0`. Nilai bawaannya sudah disetel untuk foto yang ada di `images/`.
+Kalau kamu mengganti fotonya, ubah nilai ini lalu jalankan sel pratinjau untuk
+mengecek posisi kotaknya sebelum di-crop.
 
 ```python
-ROI = (0.00, 0.50, 0.80, 1.00)   # kiri, atas, kanan, bawah
+ROI = (0.00, 0.49, 0.74, 0.93)   # kiri, atas, kanan, bawah
 ```
 
 ## Berkas Keluaran
